@@ -1,0 +1,606 @@
+@font-face {
+  font-family: FSElliotRegular;
+  src: url(../fonts/FSElliotWeb-Regular.woff);
+}
+
+@font-face {
+  font-family: FSElliotHeavy;
+  src: url(../fonts/FSElliotWeb-Heavy.woff);
+  font-weight: 900;
+}
+
+.machinery-filter-col{margin-bottom:30px; text-transform:uppercase; font-family:FSElliotRegular,Arial,sans-serif;}
+.productblock{border:solid 1px #dcdcdc; padding:15px; position:relative;}
+
+.productblock h3 a{text-align:center;}
+
+.productblock.Agriculture h3 a{color:#fab200;}
+.productblock.Construction h3 a{color:#0087c4;}
+.productblock.Dairy h3 a{color:#68c6e0;}
+.productblock.Groundcare h3 a{color:#009546;}
+
+.productblock.Agriculture .refnumberbox, .ribbon.Agriculture span, .ddagriculture{background-color:#fab200;}
+.productblock.Construction .refnumberbox, .ribbon.Construction span, .ddconstruction{background-color:#0087c4;}
+.productblock.Dairy .refnumberbox, .ribbon.Dairy span, .dddairy{background-color:#68c6e0;}
+.productblock.Groundcare .refnumberbox, .ribbon.Groundcare span, .ddgroundcare{background-color:#009546;}
+.vats{
+	font-family: FSElliotRegular;
+    text-transform: none;}
+a.ddagriculture span,a.ddconstruction span,a.dddairy span,a.ddgroundcare span{color:#fff;}
+
+.reset{background-color: #5F839D;
+    border-radius: 3px;
+    font-size: 16px;
+    font-size: 1.6rem;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+    border: 0px none;
+    text-transform: uppercase;
+    padding: 10px 18px;
+    font-family: FSElliotHeavy;
+    line-height: 1;
+    margin-bottom: 25px;}
+	
+.reset:hover,	
+.reset:focus{
+	 color: #FFFFFF;
+	 text-decoration:none;
+}	
+
+ .ribbon.Agriculture::before, .ribbon.Agriculture::after{border: 2px solid #fab200;}
+ .ribbon.Construction::before, .ribbon.Construction::after{border: 2px solid #0087c4;}
+ .ribbon.Dairy::before, .ribbon.Dairy::after{border: 2px solid #68c6e0;}
+ .ribbon.Groundcare::before, .ribbon.Groundcare::after{border: 2px solid #009546;}
+ 
+ 
+ 
+
+/*ribbon from https://codepen.io/nxworld/pen/oLdoWb*/
+
+.ribbon {
+  width: 102px;
+  height: 102px;
+  overflow: hidden;
+  position: absolute;
+  z-index:1;
+}
+.ribbon::before,
+.ribbon::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  display: block;
+  
+}
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 165px;
+  padding: 7px 0;
+  padding: 7px 0;  
+  background-color: #3498db;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  color: #fff;
+  font: 700 15px/1 'FS Elliot Heavy', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* top left*/
+.ribbon-top-left {
+  top: -5px;
+  left: -5px;
+}
+.ribbon-top-left::before,
+.ribbon-top-left::after {
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.ribbon-top-left::before {
+  top: 0;
+  right: 0;
+}
+.ribbon-top-left::after {
+  bottom: 0;
+  left: 0;
+}
+.ribbon-top-left span {
+right: -30px;
+right: -20px;
+  top: 40px;
+  top: 27px;
+  transform: rotate(-45deg); 
+}
+
+
+	
+
+.imagegroup{position:relative; overflow: hidden;}
+
+.logogroup{
+margin-top:12px;
+position: relative;
+height:110px;
+}
+.logogroup .inner{width: 110px;
+	
+
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+.logogroup .inner img{ max-width:110px; }
+
+.refnumberbox{position: absolute; width:125px; height:33px; bottom: 0;
+  right: 0; border-left:solid 2px #ffffff;border-top:solid 2px #ffffff; color:#ffffff; padding-left:4px; padding-top:5px;}
+  
+.titlebox{min-height:50px;} 
+
+.detailsgroup{text-align:center;margin-bottom:12px;}
+
+.year-display, .clock-display, .condition-display{ font-family: FSElliotHeavy;}
+  
+.pricebox{color:#ffffff; height:61px; font-family: FSElliotHeavy; font-size:24px; text-align:center; padding-top:16px;}
+
+.vat{font-family: FSElliotRegular; text-transform:none;}
+
+.pricebox.Agriculture {background-color:#fab200;}
+.pricebox.Construction {background-color:#0087c4;}
+.pricebox.Dairy {background-color:#68c6e0;}
+.pricebox.Groundcare {background-color:#009546;}
+
+.fadeIn{ animation: fadeIn ease 2s;
+  -webkit-animation: fadeIn ease 2s;
+  -moz-animation: fadeIn ease 2s;
+  -o-animation: fadeIn ease 2s;
+  -ms-animation: fadeIn ease 2s;
+}
+.fadeOut{ animation: fadeOut ease 2s;
+  -webkit-animation: fadeOut ease 2s;
+  -moz-animation: fadeOut ease 2s;
+  -o-animation: fadeOut ease 2s;
+  -ms-animation: fadeOut ease 2s;
+}
+
+@-webkit-keyframes
+fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes
+fadeIn{from{opacity:0}to{opacity:1}}
+@-webkit-keyframes
+fadeOut{from{opacity:1}to{opacity:0}}
+@keyframes
+fadeOut{from{opacity:1}to{opacity:0}}
+
+/* Functional styling;
+ * These styles are required for noUiSlider to function.
+ * You don't need to change these rules to apply your design.
+ */
+.noUi-target,.noUi-target * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-touch-action: none;
+  touch-action: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.noUi-target {
+  position: relative;
+  direction: ltr;
+}
+
+.noUi-base {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+/* Fix 401 */
+}
+
+.noUi-origin {
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.noUi-handle {
+  position: relative;
+  z-index: 1;
+}
+
+.noUi-stacking .noUi-handle {
+/* This class is applied to the lower origin when
+   its values is > 50%. */
+  z-index: 10;
+}
+
+.noUi-state-tap .noUi-origin {
+  -webkit-transition: left 0.3s,top .3s;
+  transition: left 0.3s,top .3s;
+}
+
+.noUi-state-drag * {
+  cursor: inherit !important;
+}
+
+/* Painting and performance;
+ * Browsers can paint handles in their own layer.
+ */
+.noUi-base,.noUi-handle {
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+/* Slider size and handle placement;
+ */
+.noUi-horizontal {
+  height: 4px;
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  left: -7px;
+  top: -7px;
+  background-color: #5F839D;
+}
+
+/* Styling;
+ */
+.noUi-background {
+  background: #E7ECF0;
+}
+
+.noUi-connect {
+  background: #5F839D;
+  -webkit-transition: background 450ms;
+  transition: background 450ms;
+}
+
+.noUi-origin {
+  border-radius: 2px;
+}
+
+.noUi-target {
+  border-radius: 2px;
+}
+
+.noUi-target.noUi-connect {
+}
+
+/* Handles and cursors;
+ */
+.noUi-draggable {
+  cursor: w-resize;
+}
+
+.noUi-vertical .noUi-draggable {
+  cursor: n-resize;
+}
+
+.noUi-handle {
+  cursor: default;
+  -webkit-box-sizing: content-box !important;
+  -moz-box-sizing: content-box !important;
+  box-sizing: content-box !important;
+}
+
+.noUi-handle:active {
+  border: 8px solid #5F839D;
+  border: 8px solid rgba(53,93,187,0.38);
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  left: -14px;
+  top: -14px;
+}
+
+/* Disabled state;
+ */
+[disabled].noUi-connect,[disabled] .noUi-connect {
+  background: #B8B8B8;
+}
+
+[disabled].noUi-origin,[disabled] .noUi-handle {
+  cursor: not-allowed;
+}
+
+
+
+	
+/* Select boxes */
+
+body .bootstrap-select .dropdown-toggle:focus, 
+body .bootstrap-select > select.mobile-device:focus + .dropdown-toggle{
+	outline:none!important;
+}
+
+body .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+	width:100%;
+}
+
+.select-wrap{
+	margin-bottom:10px;
+}
+
+body .bootstrap-select > .dropdown-toggle.bs-placeholder, 
+body .bootstrap-select > .dropdown-toggle, 
+body .bootstrap-select > .dropdown-toggle.bs-placeholder:active, 
+body .bootstrap-select > .dropdown-toggle:active, 
+body .bootstrap-select > .dropdown-toggle.bs-placeholder:focus, 
+body .bootstrap-select > .dropdown-toggle:focus, 
+body .bootstrap-select > .dropdown-toggle.bs-placeholder:hover,
+body .bootstrap-select > .dropdown-toggle:hover,
+body .bootstrap-select .filter-option{
+	color: #5F839D;
+
+	font-weight:bold;
+	font-size:17px;
+	font-family:FSElliotRegular,Arial,sans-serif;
+	border:0px none!important;
+	box-shadow:none!important;
+	
+}
+
+body .bootstrap-select > .dropdown-toggle{
+	padding-left:15px;
+	padding-right:15px;
+	background-color: #E7ECF0;
+	border:0px none;
+}
+
+body .dropdown-menu > li > a{
+	color: #5F839D;
+}
+
+body .dropdown-menu > li > a:focus, 
+body .dropdown-menu > li > a:hover{
+	color: #5F839D;
+	background-color: #E7ECF0;
+}
+
+#btnSubmit{
+	 background-color: #5F839D;
+	 border-radius:3px;
+	 font-size: 16px;
+	 font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  color: #FFFFFF;
+  border:0px none;
+  text-transform:uppercase;
+  padding: 10px 18px;
+  font-family: FSElliotHeavy;
+  line-height:1;
+  margin-bottom:25px;
+}
+
+.slider-section{
+	margin-top: 20px;
+margin-bottom: 10px;
+}
+.slider-labels{
+	margin-bottom:12px;
+	color: #5F839D;#
+	
+}
+
+.filter-button{
+	background-color: #E7ECF0;
+    color: #5F839D;
+	border:0px none;
+	margin-bottom:10px;
+	cursor:pointer;
+	border-radius:3px;
+	text-align:center;
+    width: calc(25% - 4px);
+    display: inline-block;
+	position:relative;
+}
+
+.filter-button .line{
+	background:#CCD7DF;
+	width:100%;
+	height:4px;
+	border-radius: 0 0 3px 3px;
+}
+
+.filter-button.selected .line{
+	background:#5F839D;
+}
+
+.filter-button.selected:after{
+	content:"\f058";
+	font-family:FontAwesome;
+	position:absolute;
+	top:-10px;
+	right:5px;
+}
+
+.filter-button .button-text{
+	padding:12px 0;
+	font-size:17px;
+	font-weight:bold;
+}
+
+.productblock{
+	max-width:350px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#filter-results{
+	display:flex;
+	flex-wrap:wrap;
+	width:100%;
+}
+
+.machinery-filter-col .imagegroup img{
+	width:100%;
+	height:auto;
+}
+
+.filter-section h2{
+	text-align:center;
+	text-transform:uppercase;
+}
+
+.row.info-row{
+	display:flex;
+	flex-wrap:wrap;
+	align-items:center;
+}
+
+.filter-info{
+	display:inline-block;
+	font-family: FSElliotHeavy;
+	text-transform:uppercase;
+	margin-right:15px;
+}
+
+#filter-accordion{
+	text-align:center;
+	cursor:pointer;
+}
+#filter-accordion .filter-text{
+	 font-size: 12px;
+	font-weight: 900;
+	font-family: FSElliotHeavy;
+	line-height:1;
+	color: #5F839D;
+	border-bottom:1px solid #D7E0E6;
+	padding-bottom:10px;
+}
+
+.icon-cont{
+	display:table;
+	margin: -10px auto 0;
+	background:#AFC1CE;
+	border-radius:50%;
+	padding:4px;
+}
+
+.icon-cont .blue-caret{
+	display:table-cell;
+	vertical-align:middle;
+	height:12px;
+	width:12px;
+}
+
+
+#filter-fields.shut{
+	max-height: 0;
+	-moz-transition: max-height 0.6s;
+    -o-transition: max-height 0.6s;
+    -webkit-transition: max-height 0.6s;
+    transition: max-height 0.6s;
+}
+
+#filter-fields{
+	-moz-transition: max-height 0.6s;
+    -o-transition: max-height 0.6s;
+    -webkit-transition: max-height 0.6s;
+    transition: max-height 0.6s;
+	max-height: 999px;
+		/* overflow:hidden; */
+}
+
+#fullsearch .row{
+	background:#fff;
+	position:relative;
+}
+
+#machinery-filter-response .info-row{
+	margin-bottom:30px;
+	pointer-events:none;
+}
+
+#machinery-filter-response{
+	width:100%;
+}
+
+.slider-cont{
+	position:relative;
+	z-index:0;
+}
+
+
+body .bootstrap-select select#sortby + .dropdown-toggle,
+body .bootstrap-select select#sortby + .dropdown-toggle:active, 
+body .bootstrap-select select#sortby + .dropdown-toggle:focus, 
+body .bootstrap-select select#sortby + .dropdown-toggle:hover, 
+body .bootstrap-select select#sortby + .dropdown-toggle .filter-option{
+	background-color: #3D3D3B;
+	  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform:uppercase;
+  font-family: FSElliotHeavy;
+  border-radius:0px;
+  padding-top:5px;
+  padding-bottom:5px;
+  border:0px none;
+}
+
+
+
+
+
+
+.machinery-filter-col a,
+.machinery-filter-col a:hover,
+.machinery-filter-col a:focus{
+	text-decoration:none;
+	color:#3D3D3B;
+}
+
+
+a .productblock.Agriculture h3 {color:#fab200;}
+a .productblock.Construction h3 {color:#0087c4;}
+a .productblock.Dairy h3 {color:#68c6e0;}
+a .productblock.Groundcare h3 {color:#009546;}
+
+	#filter-fields > div {
+		margin-top:7px;
+	}
+
+@media only screen and (min-width: 768px){
+	
+	select#sortby + button{
+		max-width:198px;
+		float:right;
+	}
+	
+	#machinery-filter-response .info-row{
+	margin-top: -50px;
+}
+	
+	
+	
+}
+
+@media only screen and (max-width: 991px){
+	
+#filter-fields > div > div.slider-cont{
+	width: 94%;
+	margin: 0 auto;
+}	
+
+
+}
+
+@media only screen and (max-width: 768px){
+
+
+}
+@media only screen and (max-width: 467px) {
+
+.filter-button .button-text{min-height:73px;}
+}
